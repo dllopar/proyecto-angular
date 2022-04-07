@@ -1,1 +1,18 @@
-<p>contact works!</p>
+<div class="container">
+	<h1>Contacto</h1>
+
+	
+	Tamaño del Slider:
+	<input type="number" [(ngModel)]="widthSlider" (keyup.enter)="cargarSlider()" />
+
+	<div *ngIf="anchuraToSlider">
+		<slider [anchura]="anchuraToSlider"
+				(conseguirAutor)="getAutor($event)"
+		></slider>
+	</div>
+
+<div class="container" *ngIf="autor">
+
+{{autor.nombre + " " + " " + autor.linkedin}}
+
+</div>
